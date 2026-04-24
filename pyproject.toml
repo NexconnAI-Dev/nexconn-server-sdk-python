@@ -3,7 +3,7 @@ name = "ncsdk"
 version = "0.1.0"
 description = "Nexconn Server API"
 authors = [
-  {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
+  {name = "Nexconn",email = "customercare@nexconn.ai"},
 ]
 license = "MIT"
 readme = "README.md"
