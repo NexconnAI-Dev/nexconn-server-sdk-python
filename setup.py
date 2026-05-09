@@ -37,7 +37,7 @@ setup(
     description="Nexconn Server API",
     author="Nexconn",
     author_email="customercare@nexconn.ai",
-    url="https://gitlab2.rongcloud.net/public-server/nexconn-server-sdk-python",
+    url="https://github.com/NexconnAI-Dev/nexconn-server-sdk-python",
     keywords=["OpenAPI", "OpenAPI-Generator", "Nexconn Server API"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
