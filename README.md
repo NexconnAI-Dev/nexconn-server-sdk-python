@@ -15,7 +15,7 @@ OpenAPI specification aligned with the current Nexconn public documentation, PDF
 ## Installation
 
 ```sh
-pip install "git+https://gitlab2.rongcloud.net/public-server/nexconn-server-sdk-python.git@dev"
+pip install "git+https://github.com/NexconnAI-Dev/nexconn-server-sdk-python.git@v0.1.0"
 ```
 
 If you publish releases later, prefer installing a tagged version instead of tracking a branch.
@@ -619,7 +619,7 @@ Authentication schemes defined for the API:
 
 ## Package Info
 
-- Repository: `https://gitlab2.rongcloud.net/public-server/nexconn-server-sdk-python`
+- Repository: `https://github.com/NexconnAI-Dev/nexconn-server-sdk-python`
 - Package version: `0.1.0`
 
 ## License

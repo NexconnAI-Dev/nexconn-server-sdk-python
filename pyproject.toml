@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://gitlab2.rongcloud.net/public-server/nexconn-server-sdk-python"
+Repository = "https://github.com/NexconnAI-Dev/nexconn-server-sdk-python"
 
 [tool.poetry]
 requires-poetry = ">=2.0"
