@@ -5,7 +5,7 @@ description = "Nexconn Server API"
 authors = [
   {name = "Nexconn",email = "customercare@nexconn.ai"},
 ]
-license = "MIT"
+license = {text = "MIT"}
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Nexconn Server API"]
 requires-python = ">=3.8"
