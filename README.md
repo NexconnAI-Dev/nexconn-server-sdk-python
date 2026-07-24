@@ -1,7 +1,7 @@
 # nexconn-sdk-python
 
 Nexconn Server API
-- API version: 0.1.0
+- API version: 0.1.1
   - Generator version: 7.14.0
 
 OpenAPI specification aligned with the current Nexconn public documentation, PDF source documents, and generated SDK requirements.
@@ -15,7 +15,7 @@ OpenAPI specification aligned with the current Nexconn public documentation, PDF
 ## Installation
 
 ```sh
-pip install "git+https://github.com/NexconnAI-Dev/nexconn-server-sdk-python.git@v0.1.0"
+pip install "git+https://github.com/NexconnAI-Dev/nexconn-server-sdk-python.git@v0.1.1"
 ```
 
 If you publish releases later, prefer installing a tagged version instead of tracking a branch.
@@ -127,7 +127,7 @@ All exception subclasses provide the following attributes:
 
 - Automatic Nexconn request signing when `set_nexconn_credentials()` is configured
 - Built-in multi-domain failover support via `set_primary_backup_domains()`
-- Default `User-Agent`: `nexconn-sdk-python/0.1.0`
+- Default `User-Agent`: `nexconn-sdk-python/0.1.1`
 - Automatic `X-Request-ID` generation
 
 ## Documentation for API Endpoints
@@ -228,7 +228,9 @@ Class | Method | HTTP request | Description
 *MessageManagementApi* | [**list_community_channel_message_metadata**](docs/MessageManagementApi.md#list_community_channel_message_metadata) | **POST** /v4/community-channel/message/metadata/list | List community-channel message metadata
 *MessageManagementApi* | [**send_community_channel_message**](docs/MessageManagementApi.md#send_community_channel_message) | **POST** /v4/community-channel/message/send | Send a community channel message
 *MessageManagementApi* | [**send_direct_channel_message**](docs/MessageManagementApi.md#send_direct_channel_message) | **POST** /v4/direct-channel/message/send | Send a direct message
+*MessageManagementApi* | [**send_direct_channel_stream_message**](docs/MessageManagementApi.md#send_direct_channel_stream_message) | **POST** /v4/direct-channel/message/stream/send | Send a direct channel stream message
 *MessageManagementApi* | [**send_group_channel_message**](docs/MessageManagementApi.md#send_group_channel_message) | **POST** /v4/group-channel/message/send | Send a group message
+*MessageManagementApi* | [**send_group_channel_stream_message**](docs/MessageManagementApi.md#send_group_channel_stream_message) | **POST** /v4/group-channel/message/stream/send | Send a group channel stream message
 *MessageManagementApi* | [**send_open_channel_message**](docs/MessageManagementApi.md#send_open_channel_message) | **POST** /v4/open-channel/message/send | Send an open channel message
 *MessageManagementApi* | [**set_channel_type_message_metadata**](docs/MessageManagementApi.md#set_channel_type_message_metadata) | **POST** /v4/channel-type/message/metadata/set | Set message metadata
 *MessageManagementApi* | [**set_community_channel_message_metadata**](docs/MessageManagementApi.md#set_community_channel_message_metadata) | **POST** /v4/community-channel/message/metadata/set | Set community-channel message metadata
@@ -405,6 +407,7 @@ Class | Method | HTTP request | Description
 - [CommunityUserSubchannelListResponseResult](docs/CommunityUserSubchannelListResponseResult.md)
 - [DirectChannelMessageSendRequest](docs/DirectChannelMessageSendRequest.md)
 - [DirectChannelMessageUpdateRequest](docs/DirectChannelMessageUpdateRequest.md)
+- [DirectChannelStreamMessageSendRequest](docs/DirectChannelStreamMessageSendRequest.md)
 - [FriendAddRequest](docs/FriendAddRequest.md)
 - [FriendCleanRequest](docs/FriendCleanRequest.md)
 - [FriendDeleteRequest](docs/FriendDeleteRequest.md)
@@ -470,6 +473,7 @@ Class | Method | HTTP request | Description
 - [GroupChannelProfileListResponseResult](docs/GroupChannelProfileListResponseResult.md)
 - [GroupChannelProfileUpdateRequest](docs/GroupChannelProfileUpdateRequest.md)
 - [GroupChannelQuitRequest](docs/GroupChannelQuitRequest.md)
+- [GroupChannelStreamMessageSendRequest](docs/GroupChannelStreamMessageSendRequest.md)
 - [GroupChannelSummaryItem](docs/GroupChannelSummaryItem.md)
 - [GroupChannelTransferOwnerRequest](docs/GroupChannelTransferOwnerRequest.md)
 - [GroupChannelUserMuteListAddRequest](docs/GroupChannelUserMuteListAddRequest.md)
@@ -547,6 +551,9 @@ Class | Method | HTTP request | Description
 - [ProfanityWordListedItem](docs/ProfanityWordListedItem.md)
 - [SingleMessageIdResponse](docs/SingleMessageIdResponse.md)
 - [SingleMessageIdResponseResult](docs/SingleMessageIdResponseResult.md)
+- [StreamMessageContent](docs/StreamMessageContent.md)
+- [StreamMessageSendResponse](docs/StreamMessageSendResponse.md)
+- [StreamMessageSendResponseResult](docs/StreamMessageSendResponseResult.md)
 - [SystemChannelBroadcastAllRequest](docs/SystemChannelBroadcastAllRequest.md)
 - [SystemChannelBroadcastDeleteRequest](docs/SystemChannelBroadcastDeleteRequest.md)
 - [SystemChannelBroadcastOnlineRequest](docs/SystemChannelBroadcastOnlineRequest.md)
@@ -620,7 +627,7 @@ Authentication schemes defined for the API:
 ## Package Info
 
 - Repository: `https://github.com/NexconnAI-Dev/nexconn-server-sdk-python`
-- Package version: `0.1.0`
+- Package version: `0.1.1`
 
 ## License
 

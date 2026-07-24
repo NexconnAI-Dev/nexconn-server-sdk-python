@@ -13,7 +13,9 @@ Method | HTTP request | Description
 [**list_community_channel_message_metadata**](MessageManagementApi.md#list_community_channel_message_metadata) | **POST** /v4/community-channel/message/metadata/list | List community-channel message metadata
 [**send_community_channel_message**](MessageManagementApi.md#send_community_channel_message) | **POST** /v4/community-channel/message/send | Send a community channel message
 [**send_direct_channel_message**](MessageManagementApi.md#send_direct_channel_message) | **POST** /v4/direct-channel/message/send | Send a direct message
+[**send_direct_channel_stream_message**](MessageManagementApi.md#send_direct_channel_stream_message) | **POST** /v4/direct-channel/message/stream/send | Send a direct channel stream message
 [**send_group_channel_message**](MessageManagementApi.md#send_group_channel_message) | **POST** /v4/group-channel/message/send | Send a group message
+[**send_group_channel_stream_message**](MessageManagementApi.md#send_group_channel_stream_message) | **POST** /v4/group-channel/message/stream/send | Send a group channel stream message
 [**send_open_channel_message**](MessageManagementApi.md#send_open_channel_message) | **POST** /v4/open-channel/message/send | Send an open channel message
 [**set_channel_type_message_metadata**](MessageManagementApi.md#set_channel_type_message_metadata) | **POST** /v4/channel-type/message/metadata/set | Set message metadata
 [**set_community_channel_message_metadata**](MessageManagementApi.md#set_community_channel_message_metadata) | **POST** /v4/community-channel/message/metadata/set | Set community-channel message metadata
@@ -748,6 +750,87 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **send_direct_channel_stream_message**
+> StreamMessageSendResponse send_direct_channel_stream_message(direct_channel_stream_message_send_request)
+
+Send a direct channel stream message
+
+Rate limit: 100/sec.
+
+### Example
+
+* Api Key Authentication (NexconnSignature):
+
+```python
+import ncsdk
+from ncsdk.models.direct_channel_stream_message_send_request import DirectChannelStreamMessageSendRequest
+from ncsdk.models.stream_message_send_response import StreamMessageSendResponse
+from ncsdk.rest import ApiException
+from pprint import pprint
+
+# Configure primary/backup domains before sending requests.
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ncsdk.Configuration()
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: NexconnSignature
+configuration.api_key['NexconnSignature'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['NexconnSignature'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ncsdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ncsdk.MessageManagementApi(api_client)
+    
+    direct_channel_stream_message_send_request = ncsdk.DirectChannelStreamMessageSendRequest() # DirectChannelStreamMessageSendRequest | 
+    
+
+    try:
+        # Send a direct channel stream message
+        api_response = api_instance.send_direct_channel_stream_message(direct_channel_stream_message_send_request)
+        print("The response of MessageManagementApi->send_direct_channel_stream_message:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MessageManagementApi->send_direct_channel_stream_message: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **direct_channel_stream_message_send_request** | [**DirectChannelStreamMessageSendRequest**](DirectChannelStreamMessageSendRequest.md)|  | 
+
+
+### Return type
+
+[**StreamMessageSendResponse**](StreamMessageSendResponse.md)
+
+### Authorization
+
+[NexconnSignature](../README.md#NexconnSignature)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **send_group_channel_message**
 > ChannelMessageSendResponse send_group_channel_message(group_channel_message_send_request)
 
@@ -811,6 +894,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ChannelMessageSendResponse**](ChannelMessageSendResponse.md)
+
+### Authorization
+
+[NexconnSignature](../README.md#NexconnSignature)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **send_group_channel_stream_message**
+> StreamMessageSendResponse send_group_channel_stream_message(group_channel_stream_message_send_request)
+
+Send a group channel stream message
+
+Rate limit: 100/sec.
+
+### Example
+
+* Api Key Authentication (NexconnSignature):
+
+```python
+import ncsdk
+from ncsdk.models.group_channel_stream_message_send_request import GroupChannelStreamMessageSendRequest
+from ncsdk.models.stream_message_send_response import StreamMessageSendResponse
+from ncsdk.rest import ApiException
+from pprint import pprint
+
+# Configure primary/backup domains before sending requests.
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ncsdk.Configuration()
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: NexconnSignature
+configuration.api_key['NexconnSignature'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['NexconnSignature'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ncsdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ncsdk.MessageManagementApi(api_client)
+    
+    group_channel_stream_message_send_request = ncsdk.GroupChannelStreamMessageSendRequest() # GroupChannelStreamMessageSendRequest | 
+    
+
+    try:
+        # Send a group channel stream message
+        api_response = api_instance.send_group_channel_stream_message(group_channel_stream_message_send_request)
+        print("The response of MessageManagementApi->send_group_channel_stream_message:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MessageManagementApi->send_group_channel_stream_message: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_channel_stream_message_send_request** | [**GroupChannelStreamMessageSendRequest**](GroupChannelStreamMessageSendRequest.md)|  | 
+
+
+### Return type
+
+[**StreamMessageSendResponse**](StreamMessageSendResponse.md)
 
 ### Authorization
 
