@@ -104,6 +104,7 @@ docs/CommunityUserSubchannelListResponse.md
 docs/CommunityUserSubchannelListResponseResult.md
 docs/DirectChannelMessageSendRequest.md
 docs/DirectChannelMessageUpdateRequest.md
+docs/DirectChannelStreamMessageSendRequest.md
 docs/FriendAddRequest.md
 docs/FriendCleanRequest.md
 docs/FriendDeleteRequest.md
@@ -172,6 +173,7 @@ docs/GroupChannelProfileListResponse.md
 docs/GroupChannelProfileListResponseResult.md
 docs/GroupChannelProfileUpdateRequest.md
 docs/GroupChannelQuitRequest.md
+docs/GroupChannelStreamMessageSendRequest.md
 docs/GroupChannelSummaryItem.md
 docs/GroupChannelTransferOwnerRequest.md
 docs/GroupChannelUserMuteListAddRequest.md
@@ -256,6 +258,9 @@ docs/ProfanityWordListResponseResult.md
 docs/ProfanityWordListedItem.md
 docs/SingleMessageIdResponse.md
 docs/SingleMessageIdResponseResult.md
+docs/StreamMessageContent.md
+docs/StreamMessageSendResponse.md
+docs/StreamMessageSendResponseResult.md
 docs/SystemChannelBroadcastAllRequest.md
 docs/SystemChannelBroadcastDeleteRequest.md
 docs/SystemChannelBroadcastOnlineRequest.md
@@ -441,6 +446,7 @@ ncsdk/models/community_user_subchannel_list_response.py
 ncsdk/models/community_user_subchannel_list_response_result.py
 ncsdk/models/direct_channel_message_send_request.py
 ncsdk/models/direct_channel_message_update_request.py
+ncsdk/models/direct_channel_stream_message_send_request.py
 ncsdk/models/friend_add_request.py
 ncsdk/models/friend_clean_request.py
 ncsdk/models/friend_delete_request.py
@@ -506,6 +512,7 @@ ncsdk/models/group_channel_profile_list_response.py
 ncsdk/models/group_channel_profile_list_response_result.py
 ncsdk/models/group_channel_profile_update_request.py
 ncsdk/models/group_channel_quit_request.py
+ncsdk/models/group_channel_stream_message_send_request.py
 ncsdk/models/group_channel_summary_item.py
 ncsdk/models/group_channel_transfer_owner_request.py
 ncsdk/models/group_channel_user_mute_list_add_request.py
@@ -583,6 +590,9 @@ ncsdk/models/profanity_word_list_response_result.py
 ncsdk/models/profanity_word_listed_item.py
 ncsdk/models/single_message_id_response.py
 ncsdk/models/single_message_id_response_result.py
+ncsdk/models/stream_message_content.py
+ncsdk/models/stream_message_send_response.py
+ncsdk/models/stream_message_send_response_result.py
 ncsdk/models/system_channel_broadcast_all_request.py
 ncsdk/models/system_channel_broadcast_delete_request.py
 ncsdk/models/system_channel_broadcast_online_request.py
@@ -751,6 +761,7 @@ test/test_community_user_subchannel_list_response.py
 test/test_community_user_subchannel_list_response_result.py
 test/test_direct_channel_message_send_request.py
 test/test_direct_channel_message_update_request.py
+test/test_direct_channel_stream_message_send_request.py
 test/test_friend_add_request.py
 test/test_friend_clean_request.py
 test/test_friend_delete_request.py
@@ -819,6 +830,7 @@ test/test_group_channel_profile_list_response.py
 test/test_group_channel_profile_list_response_result.py
 test/test_group_channel_profile_update_request.py
 test/test_group_channel_quit_request.py
+test/test_group_channel_stream_message_send_request.py
 test/test_group_channel_summary_item.py
 test/test_group_channel_transfer_owner_request.py
 test/test_group_channel_user_mute_list_add_request.py
@@ -903,6 +915,9 @@ test/test_profanity_word_list_response_result.py
 test/test_profanity_word_listed_item.py
 test/test_single_message_id_response.py
 test/test_single_message_id_response_result.py
+test/test_stream_message_content.py
+test/test_stream_message_send_response.py
+test/test_stream_message_send_response_result.py
 test/test_system_channel_broadcast_all_request.py
 test/test_system_channel_broadcast_delete_request.py
 test/test_system_channel_broadcast_online_request.py
