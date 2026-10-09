@@ -14,10 +14,10 @@
 
 import unittest
 
-from ncsdk.models.message_record import MessageRecord
+from ncsdk.models.direct_group_history_message_record import DirectGroupHistoryMessageRecord
 
-class TestMessageRecord(unittest.TestCase):
-    """MessageRecord unit test stubs"""
+class TestDirectGroupHistoryMessageRecord(unittest.TestCase):
+    """DirectGroupHistoryMessageRecord unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,18 +25,17 @@ class TestMessageRecord(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MessageRecord:
-        """Test MessageRecord
+    def make_instance(self, include_optional) -> DirectGroupHistoryMessageRecord:
+        """Test DirectGroupHistoryMessageRecord
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `MessageRecord`
+        # uncomment below to create an instance of `DirectGroupHistoryMessageRecord`
         """
-        model = MessageRecord()
+        model = DirectGroupHistoryMessageRecord()
         if include_optional:
-            return MessageRecord(
+            return DirectGroupHistoryMessageRecord(
                 channel_id = '',
-                subchannel_id = '',
                 from_user_id = '',
                 message_id = '',
                 sent_at = 56,
@@ -49,15 +48,16 @@ class TestMessageRecord(unittest.TestCase):
                         value = '', 
                         updated_at = 56, )
                     ],
+                ai_generated = True,
                 quote = ''
             )
         else:
-            return MessageRecord(
+            return DirectGroupHistoryMessageRecord(
         )
         """
 
-    def testMessageRecord(self):
-        """Test MessageRecord"""
+    def testDirectGroupHistoryMessageRecord(self):
+        """Test DirectGroupHistoryMessageRecord"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

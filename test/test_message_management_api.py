@@ -68,10 +68,38 @@ class TestMessageManagementApi(unittest.TestCase):
         """
         pass
 
+    def test_list_community_channel_history_messages(self) -> None:
+        """Test case for list_community_channel_history_messages
+
+        List community-channel history messages
+        """
+        pass
+
     def test_list_community_channel_message_metadata(self) -> None:
         """Test case for list_community_channel_message_metadata
 
         List community-channel message metadata
+        """
+        pass
+
+    def test_list_direct_channel_history_messages(self) -> None:
+        """Test case for list_direct_channel_history_messages
+
+        List direct-channel history messages
+        """
+        pass
+
+    def test_list_group_channel_history_messages(self) -> None:
+        """Test case for list_group_channel_history_messages
+
+        List group-channel history messages
+        """
+        pass
+
+    def test_list_open_channel_history_messages(self) -> None:
+        """Test case for list_open_channel_history_messages
+
+        List open-channel history messages
         """
         pass
 

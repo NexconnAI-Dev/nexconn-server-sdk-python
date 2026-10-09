@@ -96,13 +96,6 @@ class TestCommunityChannelManagementApi(unittest.TestCase):
         """
         pass
 
-    def test_list_community_channel_history_messages(self) -> None:
-        """Test case for list_community_channel_history_messages
-
-        List community-channel history messages
-        """
-        pass
-
     def test_list_community_channel_subchannel_user_groups(self) -> None:
         """Test case for list_community_channel_subchannel_user_groups
 

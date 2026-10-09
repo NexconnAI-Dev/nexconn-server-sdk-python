@@ -23,12 +23,11 @@ from ncsdk.models.message_metadata_list_item import MessageMetadataListItem
 from typing import Optional, Set
 from typing_extensions import Self
 
-class MessageRecord(BaseModel):
+class DirectGroupHistoryMessageRecord(BaseModel):
     """
-    MessageRecord
+    DirectGroupHistoryMessageRecord
     """ # noqa: E501
     channel_id: Optional[StrictStr] = Field(default=None, description="Channel identifier of the stored message.", alias="channelId")
-    subchannel_id: Optional[StrictStr] = Field(default=None, description="Community subchannel ID associated with the stored message, when applicable.", alias="subchannelId")
     from_user_id: Optional[StrictStr] = Field(default=None, description="Sender user ID of the stored message.", alias="fromUserId")
     message_id: Optional[StrictStr] = Field(default=None, description="Unique message ID.", alias="messageId")
     sent_at: Optional[StrictInt] = Field(default=None, description="Message send timestamp in milliseconds.", alias="sentAt")
@@ -36,8 +35,9 @@ class MessageRecord(BaseModel):
     content: Optional[StrictStr] = Field(default=None, description="Raw message content payload as stored by the service.")
     has_metadata: Optional[StrictBool] = Field(default=None, description="Whether the message has metadata entries attached.", alias="hasMetadata")
     metadata: Optional[List[MessageMetadataListItem]] = Field(default=None, description="Structured message metadata entries. Omitted when the original metadata is empty or cannot be parsed.")
+    ai_generated: Optional[StrictBool] = Field(default=None, description="Whether the message was AI-generated. Returned only for direct and group channels when the application has enabled this capability.", alias="aiGenerated")
     quote: Optional[StrictStr] = Field(default=None, description="Quoted message details as a JSON string containing msgUID, objectName and fromUserId. Omitted for messages without a quote.")
-    __properties: ClassVar[List[str]] = ["channelId", "subchannelId", "fromUserId", "messageId", "sentAt", "messageType", "content", "hasMetadata", "metadata", "quote"]
+    __properties: ClassVar[List[str]] = ["channelId", "fromUserId", "messageId", "sentAt", "messageType", "content", "hasMetadata", "metadata", "aiGenerated", "quote"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -57,7 +57,7 @@ class MessageRecord(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of MessageRecord from a JSON string"""
+        """Create an instance of DirectGroupHistoryMessageRecord from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -89,7 +89,7 @@ class MessageRecord(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of MessageRecord from a dict"""
+        """Create an instance of DirectGroupHistoryMessageRecord from a dict"""
         if obj is None:
             return None
 
@@ -98,7 +98,6 @@ class MessageRecord(BaseModel):
 
         _obj = cls.model_validate({
             "channelId": obj.get("channelId"),
-            "subchannelId": obj.get("subchannelId"),
             "fromUserId": obj.get("fromUserId"),
             "messageId": obj.get("messageId"),
             "sentAt": obj.get("sentAt"),
@@ -106,6 +105,7 @@ class MessageRecord(BaseModel):
             "content": obj.get("content"),
             "hasMetadata": obj.get("hasMetadata"),
             "metadata": [MessageMetadataListItem.from_dict(_item) for _item in obj["metadata"]] if obj.get("metadata") is not None else None,
+            "aiGenerated": obj.get("aiGenerated"),
             "quote": obj.get("quote")
         })
         return _obj

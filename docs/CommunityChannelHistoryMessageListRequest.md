@@ -5,12 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**channel_id** | **str** |  | 
-**subchannel_id** | **str** |  | 
-**start_at** | **int** |  | 
-**end_at** | **int** |  | 
-**from_user_id** | **str** |  | [optional] 
-**page_size** | **int** |  | [optional] [default to 20]
+**channel_id** | **str** | Community channel ID. | 
+**subchannel_id** | **str** | Optional community subchannel ID. When omitted, messages from the whole community channel are queried. | [optional] 
+**user_id** | **str** | User ID of the community-channel participant. | 
+**start_at** | **int** | Query start timestamp in Unix milliseconds. Must be greater than or equal to &#x60;endAt&#x60;; the range cannot exceed 14 days. | 
+**end_at** | **int** | Query end timestamp in Unix milliseconds. Messages are returned in descending timestamp order. | 
+**page_size** | **int** | Number of messages to return. Must be between 1 and 100. | [optional] [default to 10]
+**include_start** | **bool** | Whether to include the message at &#x60;startAt&#x60; when it matches the query boundary. | 
 
 ## Example
 

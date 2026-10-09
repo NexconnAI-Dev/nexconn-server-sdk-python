@@ -14,10 +14,10 @@
 
 import unittest
 
-from ncsdk.models.message_record import MessageRecord
+from ncsdk.models.open_channel_history_message_record import OpenChannelHistoryMessageRecord
 
-class TestMessageRecord(unittest.TestCase):
-    """MessageRecord unit test stubs"""
+class TestOpenChannelHistoryMessageRecord(unittest.TestCase):
+    """OpenChannelHistoryMessageRecord unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,39 +25,31 @@ class TestMessageRecord(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MessageRecord:
-        """Test MessageRecord
+    def make_instance(self, include_optional) -> OpenChannelHistoryMessageRecord:
+        """Test OpenChannelHistoryMessageRecord
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `MessageRecord`
+        # uncomment below to create an instance of `OpenChannelHistoryMessageRecord`
         """
-        model = MessageRecord()
+        model = OpenChannelHistoryMessageRecord()
         if include_optional:
-            return MessageRecord(
+            return OpenChannelHistoryMessageRecord(
                 channel_id = '',
-                subchannel_id = '',
                 from_user_id = '',
                 message_id = '',
                 sent_at = 56,
                 message_type = '',
                 content = '',
-                has_metadata = True,
-                metadata = [
-                    ncsdk.models.message_metadata_list_item.MessageMetadataListItem(
-                        key = '', 
-                        value = '', 
-                        updated_at = 56, )
-                    ],
                 quote = ''
             )
         else:
-            return MessageRecord(
+            return OpenChannelHistoryMessageRecord(
         )
         """
 
-    def testMessageRecord(self):
-        """Test MessageRecord"""
+    def testOpenChannelHistoryMessageRecord(self):
+        """Test OpenChannelHistoryMessageRecord"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
