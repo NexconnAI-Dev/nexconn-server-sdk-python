@@ -1,6 +1,6 @@
 [project]
 name = "ncsdk"
-version = "0.1.1"
+version = "0.1.2"
 description = "Nexconn Server API"
 authors = [
   {name = "Nexconn",email = "customercare@nexconn.ai"},

@@ -10,7 +10,11 @@ Method | HTTP request | Description
 [**delete_community_channel_message_metadata**](MessageManagementApi.md#delete_community_channel_message_metadata) | **POST** /v4/community-channel/message/metadata/delete | Delete community-channel message metadata keys
 [**delete_message**](MessageManagementApi.md#delete_message) | **POST** /v4/message/delete | Delete a message (recall)
 [**list_channel_type_message_metadata**](MessageManagementApi.md#list_channel_type_message_metadata) | **POST** /v4/channel-type/message/metadata/list | Get message metadata
+[**list_community_channel_history_messages**](MessageManagementApi.md#list_community_channel_history_messages) | **POST** /v4/community-channel/history-message/list | List community-channel history messages
 [**list_community_channel_message_metadata**](MessageManagementApi.md#list_community_channel_message_metadata) | **POST** /v4/community-channel/message/metadata/list | List community-channel message metadata
+[**list_direct_channel_history_messages**](MessageManagementApi.md#list_direct_channel_history_messages) | **POST** /v4/direct-channel/history-message/list | List direct-channel history messages
+[**list_group_channel_history_messages**](MessageManagementApi.md#list_group_channel_history_messages) | **POST** /v4/group-channel/history-message/list | List group-channel history messages
+[**list_open_channel_history_messages**](MessageManagementApi.md#list_open_channel_history_messages) | **POST** /v4/open-channel/history-message/list | List open-channel history messages
 [**send_community_channel_message**](MessageManagementApi.md#send_community_channel_message) | **POST** /v4/community-channel/message/send | Send a community channel message
 [**send_direct_channel_message**](MessageManagementApi.md#send_direct_channel_message) | **POST** /v4/direct-channel/message/send | Send a direct message
 [**send_direct_channel_stream_message**](MessageManagementApi.md#send_direct_channel_stream_message) | **POST** /v4/direct-channel/message/stream/send | Send a direct channel stream message
@@ -509,6 +513,87 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_community_channel_history_messages**
+> MessageHistoryResponse list_community_channel_history_messages(community_channel_history_message_list_request)
+
+List community-channel history messages
+
+Rate limit: 10/sec. Query range is at most 14 days; messages are returned in descending timestamp order.
+
+### Example
+
+* Api Key Authentication (NexconnSignature):
+
+```python
+import ncsdk
+from ncsdk.models.community_channel_history_message_list_request import CommunityChannelHistoryMessageListRequest
+from ncsdk.models.message_history_response import MessageHistoryResponse
+from ncsdk.rest import ApiException
+from pprint import pprint
+
+# Configure primary/backup domains before sending requests.
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ncsdk.Configuration()
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: NexconnSignature
+configuration.api_key['NexconnSignature'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['NexconnSignature'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ncsdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ncsdk.MessageManagementApi(api_client)
+    
+    community_channel_history_message_list_request = ncsdk.CommunityChannelHistoryMessageListRequest() # CommunityChannelHistoryMessageListRequest | 
+    
+
+    try:
+        # List community-channel history messages
+        api_response = api_instance.list_community_channel_history_messages(community_channel_history_message_list_request)
+        print("The response of MessageManagementApi->list_community_channel_history_messages:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MessageManagementApi->list_community_channel_history_messages: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **community_channel_history_message_list_request** | [**CommunityChannelHistoryMessageListRequest**](CommunityChannelHistoryMessageListRequest.md)|  | 
+
+
+### Return type
+
+[**MessageHistoryResponse**](MessageHistoryResponse.md)
+
+### Authorization
+
+[NexconnSignature](../README.md#NexconnSignature)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_community_channel_message_metadata**
 > CommunityChannelMessageMetadataListResponse list_community_channel_message_metadata(community_channel_message_metadata_list_request)
 
@@ -570,6 +655,249 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CommunityChannelMessageMetadataListResponse**](CommunityChannelMessageMetadataListResponse.md)
+
+### Authorization
+
+[NexconnSignature](../README.md#NexconnSignature)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_direct_channel_history_messages**
+> DirectGroupHistoryMessageResponse list_direct_channel_history_messages(direct_channel_history_message_list_request)
+
+List direct-channel history messages
+
+Rate limit: 10/sec. Query range is at most 14 days; messages are returned in descending timestamp order.
+
+### Example
+
+* Api Key Authentication (NexconnSignature):
+
+```python
+import ncsdk
+from ncsdk.models.direct_channel_history_message_list_request import DirectChannelHistoryMessageListRequest
+from ncsdk.models.direct_group_history_message_response import DirectGroupHistoryMessageResponse
+from ncsdk.rest import ApiException
+from pprint import pprint
+
+# Configure primary/backup domains before sending requests.
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ncsdk.Configuration()
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: NexconnSignature
+configuration.api_key['NexconnSignature'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['NexconnSignature'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ncsdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ncsdk.MessageManagementApi(api_client)
+    
+    direct_channel_history_message_list_request = ncsdk.DirectChannelHistoryMessageListRequest() # DirectChannelHistoryMessageListRequest | 
+    
+
+    try:
+        # List direct-channel history messages
+        api_response = api_instance.list_direct_channel_history_messages(direct_channel_history_message_list_request)
+        print("The response of MessageManagementApi->list_direct_channel_history_messages:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MessageManagementApi->list_direct_channel_history_messages: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **direct_channel_history_message_list_request** | [**DirectChannelHistoryMessageListRequest**](DirectChannelHistoryMessageListRequest.md)|  | 
+
+
+### Return type
+
+[**DirectGroupHistoryMessageResponse**](DirectGroupHistoryMessageResponse.md)
+
+### Authorization
+
+[NexconnSignature](../README.md#NexconnSignature)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_group_channel_history_messages**
+> DirectGroupHistoryMessageResponse list_group_channel_history_messages(group_channel_history_message_list_request)
+
+List group-channel history messages
+
+Rate limit: 10/sec. Query range is at most 14 days; messages are returned in descending timestamp order.
+
+### Example
+
+* Api Key Authentication (NexconnSignature):
+
+```python
+import ncsdk
+from ncsdk.models.direct_group_history_message_response import DirectGroupHistoryMessageResponse
+from ncsdk.models.group_channel_history_message_list_request import GroupChannelHistoryMessageListRequest
+from ncsdk.rest import ApiException
+from pprint import pprint
+
+# Configure primary/backup domains before sending requests.
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ncsdk.Configuration()
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: NexconnSignature
+configuration.api_key['NexconnSignature'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['NexconnSignature'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ncsdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ncsdk.MessageManagementApi(api_client)
+    
+    group_channel_history_message_list_request = ncsdk.GroupChannelHistoryMessageListRequest() # GroupChannelHistoryMessageListRequest | 
+    
+
+    try:
+        # List group-channel history messages
+        api_response = api_instance.list_group_channel_history_messages(group_channel_history_message_list_request)
+        print("The response of MessageManagementApi->list_group_channel_history_messages:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MessageManagementApi->list_group_channel_history_messages: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_channel_history_message_list_request** | [**GroupChannelHistoryMessageListRequest**](GroupChannelHistoryMessageListRequest.md)|  | 
+
+
+### Return type
+
+[**DirectGroupHistoryMessageResponse**](DirectGroupHistoryMessageResponse.md)
+
+### Authorization
+
+[NexconnSignature](../README.md#NexconnSignature)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_open_channel_history_messages**
+> OpenChannelHistoryMessageResponse list_open_channel_history_messages(open_channel_history_message_list_request)
+
+List open-channel history messages
+
+Rate limit: 10/sec. Query range is at most 14 days; messages are returned in descending timestamp order.
+
+### Example
+
+* Api Key Authentication (NexconnSignature):
+
+```python
+import ncsdk
+from ncsdk.models.open_channel_history_message_list_request import OpenChannelHistoryMessageListRequest
+from ncsdk.models.open_channel_history_message_response import OpenChannelHistoryMessageResponse
+from ncsdk.rest import ApiException
+from pprint import pprint
+
+# Configure primary/backup domains before sending requests.
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ncsdk.Configuration()
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: NexconnSignature
+configuration.api_key['NexconnSignature'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['NexconnSignature'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ncsdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ncsdk.MessageManagementApi(api_client)
+    
+    open_channel_history_message_list_request = ncsdk.OpenChannelHistoryMessageListRequest() # OpenChannelHistoryMessageListRequest | 
+    
+
+    try:
+        # List open-channel history messages
+        api_response = api_instance.list_open_channel_history_messages(open_channel_history_message_list_request)
+        print("The response of MessageManagementApi->list_open_channel_history_messages:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MessageManagementApi->list_open_channel_history_messages: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **open_channel_history_message_list_request** | [**OpenChannelHistoryMessageListRequest**](OpenChannelHistoryMessageListRequest.md)|  | 
+
+
+### Return type
+
+[**OpenChannelHistoryMessageResponse**](OpenChannelHistoryMessageResponse.md)
 
 ### Authorization
 

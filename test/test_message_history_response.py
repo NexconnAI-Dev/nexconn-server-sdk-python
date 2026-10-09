@@ -36,7 +36,7 @@ class TestMessageHistoryResponse(unittest.TestCase):
         if include_optional:
             return MessageHistoryResponse(
                 code = 56,
-                result = {"messages":[{"messageId":"messageId","metadata":{"key":""},"messageType":"messageType","fromUserId":"fromUserId","channelType":1,"sentAt":6,"hasMetadata":true,"channelId":"channelId","subchannelId":"subchannelId","content":"content"},{"messageId":"messageId","metadata":{"key":""},"messageType":"messageType","fromUserId":"fromUserId","channelType":1,"sentAt":6,"hasMetadata":true,"channelId":"channelId","subchannelId":"subchannelId","content":"content"}]}
+                result = {"messages":[{"channelId":"channel_1001","subchannelId":"RCDefault","fromUserId":"user_1002","messageId":"MSG-0001","sentAt":1705270000000,"messageType":"RC:TxtMsg","content":"{\"content\":\"hello\"}","hasMetadata":true,"metadata":[{"key":"key1","value":"value1","updatedAt":1705270000000}],"quote":"{\"msgUID\":\"MSG-0000\",\"objectName\":\"RC:TxtMsg\",\"fromUserId\":\"user_1001\"}"}]}
             )
         else:
             return MessageHistoryResponse(

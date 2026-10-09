@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 # Define package exports
 __all__ = [
@@ -142,9 +142,13 @@ __all__ = [
     "CommunityUserSubchannelListRequest",
     "CommunityUserSubchannelListResponse",
     "CommunityUserSubchannelListResponseResult",
+    "DirectChannelHistoryMessageListRequest",
     "DirectChannelMessageSendRequest",
     "DirectChannelMessageUpdateRequest",
     "DirectChannelStreamMessageSendRequest",
+    "DirectGroupHistoryMessageRecord",
+    "DirectGroupHistoryMessageResponse",
+    "DirectGroupHistoryMessageResult",
     "FriendAddRequest",
     "FriendCleanRequest",
     "FriendDeleteRequest",
@@ -179,6 +183,7 @@ __all__ = [
     "GroupChannelFreezeListGetResponseResult",
     "GroupChannelFreezeListUpdateRequest",
     "GroupChannelFreezeStatusItem",
+    "GroupChannelHistoryMessageListRequest",
     "GroupChannelJoinRequest",
     "GroupChannelJoinResponse",
     "GroupChannelJoinedItem",
@@ -246,6 +251,10 @@ __all__ = [
     "OpenChannelGetResponseResult",
     "OpenChannelGlobalMuteListAddRequest",
     "OpenChannelGlobalMuteListRemoveRequest",
+    "OpenChannelHistoryMessageListRequest",
+    "OpenChannelHistoryMessageRecord",
+    "OpenChannelHistoryMessageResponse",
+    "OpenChannelHistoryMessageResult",
     "OpenChannelLowPriorityMessageTypeListRequest",
     "OpenChannelMessageSendRequest",
     "OpenChannelMessageTypeListResponse",
@@ -479,9 +488,13 @@ from ncsdk.models.community_subchannel_type_update_request import CommunitySubch
 from ncsdk.models.community_user_subchannel_list_request import CommunityUserSubchannelListRequest as CommunityUserSubchannelListRequest
 from ncsdk.models.community_user_subchannel_list_response import CommunityUserSubchannelListResponse as CommunityUserSubchannelListResponse
 from ncsdk.models.community_user_subchannel_list_response_result import CommunityUserSubchannelListResponseResult as CommunityUserSubchannelListResponseResult
+from ncsdk.models.direct_channel_history_message_list_request import DirectChannelHistoryMessageListRequest as DirectChannelHistoryMessageListRequest
 from ncsdk.models.direct_channel_message_send_request import DirectChannelMessageSendRequest as DirectChannelMessageSendRequest
 from ncsdk.models.direct_channel_message_update_request import DirectChannelMessageUpdateRequest as DirectChannelMessageUpdateRequest
 from ncsdk.models.direct_channel_stream_message_send_request import DirectChannelStreamMessageSendRequest as DirectChannelStreamMessageSendRequest
+from ncsdk.models.direct_group_history_message_record import DirectGroupHistoryMessageRecord as DirectGroupHistoryMessageRecord
+from ncsdk.models.direct_group_history_message_response import DirectGroupHistoryMessageResponse as DirectGroupHistoryMessageResponse
+from ncsdk.models.direct_group_history_message_result import DirectGroupHistoryMessageResult as DirectGroupHistoryMessageResult
 from ncsdk.models.friend_add_request import FriendAddRequest as FriendAddRequest
 from ncsdk.models.friend_clean_request import FriendCleanRequest as FriendCleanRequest
 from ncsdk.models.friend_delete_request import FriendDeleteRequest as FriendDeleteRequest
@@ -516,6 +529,7 @@ from ncsdk.models.group_channel_freeze_list_get_response import GroupChannelFree
 from ncsdk.models.group_channel_freeze_list_get_response_result import GroupChannelFreezeListGetResponseResult as GroupChannelFreezeListGetResponseResult
 from ncsdk.models.group_channel_freeze_list_update_request import GroupChannelFreezeListUpdateRequest as GroupChannelFreezeListUpdateRequest
 from ncsdk.models.group_channel_freeze_status_item import GroupChannelFreezeStatusItem as GroupChannelFreezeStatusItem
+from ncsdk.models.group_channel_history_message_list_request import GroupChannelHistoryMessageListRequest as GroupChannelHistoryMessageListRequest
 from ncsdk.models.group_channel_join_request import GroupChannelJoinRequest as GroupChannelJoinRequest
 from ncsdk.models.group_channel_join_response import GroupChannelJoinResponse as GroupChannelJoinResponse
 from ncsdk.models.group_channel_joined_item import GroupChannelJoinedItem as GroupChannelJoinedItem
@@ -583,6 +597,10 @@ from ncsdk.models.open_channel_get_response import OpenChannelGetResponse as Ope
 from ncsdk.models.open_channel_get_response_result import OpenChannelGetResponseResult as OpenChannelGetResponseResult
 from ncsdk.models.open_channel_global_mute_list_add_request import OpenChannelGlobalMuteListAddRequest as OpenChannelGlobalMuteListAddRequest
 from ncsdk.models.open_channel_global_mute_list_remove_request import OpenChannelGlobalMuteListRemoveRequest as OpenChannelGlobalMuteListRemoveRequest
+from ncsdk.models.open_channel_history_message_list_request import OpenChannelHistoryMessageListRequest as OpenChannelHistoryMessageListRequest
+from ncsdk.models.open_channel_history_message_record import OpenChannelHistoryMessageRecord as OpenChannelHistoryMessageRecord
+from ncsdk.models.open_channel_history_message_response import OpenChannelHistoryMessageResponse as OpenChannelHistoryMessageResponse
+from ncsdk.models.open_channel_history_message_result import OpenChannelHistoryMessageResult as OpenChannelHistoryMessageResult
 from ncsdk.models.open_channel_low_priority_message_type_list_request import OpenChannelLowPriorityMessageTypeListRequest as OpenChannelLowPriorityMessageTypeListRequest
 from ncsdk.models.open_channel_message_send_request import OpenChannelMessageSendRequest as OpenChannelMessageSendRequest
 from ncsdk.models.open_channel_message_type_list_response import OpenChannelMessageTypeListResponse as OpenChannelMessageTypeListResponse

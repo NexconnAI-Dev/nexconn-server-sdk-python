@@ -23,18 +23,17 @@ from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CommunityChannelHistoryMessageListRequest(BaseModel):
+class OpenChannelHistoryMessageListRequest(BaseModel):
     """
-    CommunityChannelHistoryMessageListRequest
+    OpenChannelHistoryMessageListRequest
     """ # noqa: E501
-    channel_id: StrictStr = Field(description="Community channel ID.", alias="channelId")
-    subchannel_id: Optional[StrictStr] = Field(default=None, description="Optional community subchannel ID. When omitted, messages from the whole community channel are queried.", alias="subchannelId")
-    user_id: StrictStr = Field(description="User ID of the community-channel participant.", alias="userId")
+    user_id: StrictStr = Field(description="User ID of the open-channel participant.", alias="userId")
+    channel_id: StrictStr = Field(description="Open channel ID.", alias="channelId")
     start_at: StrictInt = Field(description="Query start timestamp in Unix milliseconds. Must be greater than or equal to `endAt`; the range cannot exceed 14 days.", alias="startAt")
     end_at: StrictInt = Field(description="Query end timestamp in Unix milliseconds. Messages are returned in descending timestamp order.", alias="endAt")
     page_size: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = Field(default=10, description="Number of messages to return. Must be between 1 and 100.", alias="pageSize")
     include_start: StrictBool = Field(description="Whether to include the message at `startAt` when it matches the query boundary.", alias="includeStart")
-    __properties: ClassVar[List[str]] = ["channelId", "subchannelId", "userId", "startAt", "endAt", "pageSize", "includeStart"]
+    __properties: ClassVar[List[str]] = ["userId", "channelId", "startAt", "endAt", "pageSize", "includeStart"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -54,7 +53,7 @@ class CommunityChannelHistoryMessageListRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CommunityChannelHistoryMessageListRequest from a JSON string"""
+        """Create an instance of OpenChannelHistoryMessageListRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -79,7 +78,7 @@ class CommunityChannelHistoryMessageListRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CommunityChannelHistoryMessageListRequest from a dict"""
+        """Create an instance of OpenChannelHistoryMessageListRequest from a dict"""
         if obj is None:
             return None
 
@@ -87,9 +86,8 @@ class CommunityChannelHistoryMessageListRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "channelId": obj.get("channelId"),
-            "subchannelId": obj.get("subchannelId"),
             "userId": obj.get("userId"),
+            "channelId": obj.get("channelId"),
             "startAt": obj.get("startAt"),
             "endAt": obj.get("endAt"),
             "pageSize": obj.get("pageSize") if obj.get("pageSize") is not None else 10,

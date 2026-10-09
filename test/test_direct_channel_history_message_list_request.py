@@ -14,10 +14,10 @@
 
 import unittest
 
-from ncsdk.models.community_channel_history_message_list_request import CommunityChannelHistoryMessageListRequest
+from ncsdk.models.direct_channel_history_message_list_request import DirectChannelHistoryMessageListRequest
 
-class TestCommunityChannelHistoryMessageListRequest(unittest.TestCase):
-    """CommunityChannelHistoryMessageListRequest unit test stubs"""
+class TestDirectChannelHistoryMessageListRequest(unittest.TestCase):
+    """DirectChannelHistoryMessageListRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,36 +25,35 @@ class TestCommunityChannelHistoryMessageListRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> CommunityChannelHistoryMessageListRequest:
-        """Test CommunityChannelHistoryMessageListRequest
+    def make_instance(self, include_optional) -> DirectChannelHistoryMessageListRequest:
+        """Test DirectChannelHistoryMessageListRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `CommunityChannelHistoryMessageListRequest`
+        # uncomment below to create an instance of `DirectChannelHistoryMessageListRequest`
         """
-        model = CommunityChannelHistoryMessageListRequest()
+        model = DirectChannelHistoryMessageListRequest()
         if include_optional:
-            return CommunityChannelHistoryMessageListRequest(
-                channel_id = '',
-                subchannel_id = '',
+            return DirectChannelHistoryMessageListRequest(
                 user_id = '',
+                channel_id = '',
                 start_at = 56,
                 end_at = 56,
                 page_size = 1,
                 include_start = True
             )
         else:
-            return CommunityChannelHistoryMessageListRequest(
-                channel_id = '',
+            return DirectChannelHistoryMessageListRequest(
                 user_id = '',
+                channel_id = '',
                 start_at = 56,
                 end_at = 56,
                 include_start = True,
         )
         """
 
-    def testCommunityChannelHistoryMessageListRequest(self):
-        """Test CommunityChannelHistoryMessageListRequest"""
+    def testDirectChannelHistoryMessageListRequest(self):
+        """Test DirectChannelHistoryMessageListRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

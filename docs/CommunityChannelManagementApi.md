@@ -14,7 +14,6 @@ Method | HTTP request | Description
 [**delete_community_subchannel**](CommunityChannelManagementApi.md#delete_community_subchannel) | **POST** /v4/community-channel/subchannel/delete | Delete community subchannel
 [**dismiss_community_channel**](CommunityChannelManagementApi.md#dismiss_community_channel) | **POST** /v4/community-channel/dismiss | Dismiss community channel
 [**join_community_channel**](CommunityChannelManagementApi.md#join_community_channel) | **POST** /v4/community-channel/join | Join community channel
-[**list_community_channel_history_messages**](CommunityChannelManagementApi.md#list_community_channel_history_messages) | **POST** /v4/community-channel/history-message/list | List community-channel history messages
 [**list_community_channel_subchannel_user_groups**](CommunityChannelManagementApi.md#list_community_channel_subchannel_user_groups) | **POST** /v4/community-channel/channel/user-group/list | List community channel subchannel user groups
 [**list_community_channel_user_group_subchannels**](CommunityChannelManagementApi.md#list_community_channel_user_group_subchannels) | **POST** /v4/community-channel/user-group/subchannel/list | List community channel user group subchannels
 [**list_community_channel_user_groups**](CommunityChannelManagementApi.md#list_community_channel_user_groups) | **POST** /v4/community-channel/user-group/list | List community channel user groups
@@ -804,85 +803,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CodeOnlyResponse**](CodeOnlyResponse.md)
-
-### Authorization
-
-[NexconnSignature](../README.md#NexconnSignature)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_community_channel_history_messages**
-> MessageHistoryResponse list_community_channel_history_messages(community_channel_history_message_list_request)
-
-List community-channel history messages
-
-### Example
-
-* Api Key Authentication (NexconnSignature):
-
-```python
-import ncsdk
-from ncsdk.models.community_channel_history_message_list_request import CommunityChannelHistoryMessageListRequest
-from ncsdk.models.message_history_response import MessageHistoryResponse
-from ncsdk.rest import ApiException
-from pprint import pprint
-
-# Configure primary/backup domains before sending requests.
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ncsdk.Configuration()
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: NexconnSignature
-configuration.api_key['NexconnSignature'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['NexconnSignature'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with ncsdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ncsdk.CommunityChannelManagementApi(api_client)
-    
-    community_channel_history_message_list_request = ncsdk.CommunityChannelHistoryMessageListRequest() # CommunityChannelHistoryMessageListRequest | 
-    
-
-    try:
-        # List community-channel history messages
-        api_response = api_instance.list_community_channel_history_messages(community_channel_history_message_list_request)
-        print("The response of CommunityChannelManagementApi->list_community_channel_history_messages:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CommunityChannelManagementApi->list_community_channel_history_messages: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **community_channel_history_message_list_request** | [**CommunityChannelHistoryMessageListRequest**](CommunityChannelHistoryMessageListRequest.md)|  | 
-
-
-### Return type
-
-[**MessageHistoryResponse**](MessageHistoryResponse.md)
 
 ### Authorization
 

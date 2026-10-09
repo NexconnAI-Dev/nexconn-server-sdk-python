@@ -17,24 +17,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CommunityChannelHistoryMessageListRequest(BaseModel):
+class OpenChannelHistoryMessageRecord(BaseModel):
     """
-    CommunityChannelHistoryMessageListRequest
+    OpenChannelHistoryMessageRecord
     """ # noqa: E501
-    channel_id: StrictStr = Field(description="Community channel ID.", alias="channelId")
-    subchannel_id: Optional[StrictStr] = Field(default=None, description="Optional community subchannel ID. When omitted, messages from the whole community channel are queried.", alias="subchannelId")
-    user_id: StrictStr = Field(description="User ID of the community-channel participant.", alias="userId")
-    start_at: StrictInt = Field(description="Query start timestamp in Unix milliseconds. Must be greater than or equal to `endAt`; the range cannot exceed 14 days.", alias="startAt")
-    end_at: StrictInt = Field(description="Query end timestamp in Unix milliseconds. Messages are returned in descending timestamp order.", alias="endAt")
-    page_size: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = Field(default=10, description="Number of messages to return. Must be between 1 and 100.", alias="pageSize")
-    include_start: StrictBool = Field(description="Whether to include the message at `startAt` when it matches the query boundary.", alias="includeStart")
-    __properties: ClassVar[List[str]] = ["channelId", "subchannelId", "userId", "startAt", "endAt", "pageSize", "includeStart"]
+    channel_id: Optional[StrictStr] = Field(default=None, description="Channel identifier of the stored message.", alias="channelId")
+    from_user_id: Optional[StrictStr] = Field(default=None, description="Sender user ID of the stored message.", alias="fromUserId")
+    message_id: Optional[StrictStr] = Field(default=None, description="Unique message ID.", alias="messageId")
+    sent_at: Optional[StrictInt] = Field(default=None, description="Message send timestamp in milliseconds.", alias="sentAt")
+    message_type: Optional[StrictStr] = Field(default=None, description="Message type of the stored message.", alias="messageType")
+    content: Optional[StrictStr] = Field(default=None, description="Raw message content payload as stored by the service.")
+    quote: Optional[StrictStr] = Field(default=None, description="Quoted message details as a JSON string containing msgUID, objectName and fromUserId. Omitted for messages without a quote.")
+    __properties: ClassVar[List[str]] = ["channelId", "fromUserId", "messageId", "sentAt", "messageType", "content", "quote"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -54,7 +53,7 @@ class CommunityChannelHistoryMessageListRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CommunityChannelHistoryMessageListRequest from a JSON string"""
+        """Create an instance of OpenChannelHistoryMessageRecord from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -79,7 +78,7 @@ class CommunityChannelHistoryMessageListRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CommunityChannelHistoryMessageListRequest from a dict"""
+        """Create an instance of OpenChannelHistoryMessageRecord from a dict"""
         if obj is None:
             return None
 
@@ -88,12 +87,12 @@ class CommunityChannelHistoryMessageListRequest(BaseModel):
 
         _obj = cls.model_validate({
             "channelId": obj.get("channelId"),
-            "subchannelId": obj.get("subchannelId"),
-            "userId": obj.get("userId"),
-            "startAt": obj.get("startAt"),
-            "endAt": obj.get("endAt"),
-            "pageSize": obj.get("pageSize") if obj.get("pageSize") is not None else 10,
-            "includeStart": obj.get("includeStart")
+            "fromUserId": obj.get("fromUserId"),
+            "messageId": obj.get("messageId"),
+            "sentAt": obj.get("sentAt"),
+            "messageType": obj.get("messageType"),
+            "content": obj.get("content"),
+            "quote": obj.get("quote")
         })
         return _obj
 
